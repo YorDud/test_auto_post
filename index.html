@@ -1,15 +1,26 @@
-<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-<script src="sqr.js"></script>
-<input type="button" value="Send Email" onclick="sendEmail()">
-<script>
-function sendEmail(){
-alert('Вы нажали на кнопку!');
-	/*emailjs.init("yTx4MqGg5745LwnYu");*/
- emailjs.send("service_emeehaj","template_d29osmb",{
-to_name: "2",
-from_name: "2",
-message: "2",
-reply_to: "2",
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sending Email</title>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+function sendEmail() {
+Email.send({
+SecureToken : "<9f02ad75-7ec3-4b45-83f6-3cda6afc6de4>",
+To : '<yorikduda@mail.ru>',
+From : "<rezonitautopost@gmail.com>",
+Subject: "Testing Email using javascript",
+Body: "If you are reading this, dont forget to applaud"
+})
+.then(function (message) {
+alert("Email successfully sent")
 });
 }
 </script>
+</head>
+<body>
+<form method="post">
+<input type="button" value="Send Mail"onclick="sendMail()" />
+</form>
+</body>
+</html>
